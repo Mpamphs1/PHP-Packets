@@ -38,7 +38,7 @@ button:active {
 }
 @font-face {
   font-family: MyGreek;
-  src: url(Assets/StampatelloFaceto.otf);
+  src: url(StampatelloFaceto.otf);
 }
 
 body{
@@ -49,4 +49,33 @@ body{
   justify-content: center;
   margin-top: 10%;
   align-items: center;
+}
+.koumpi{
+  background: #fbca1f;
+  font-family: inherit;
+  padding: 0.6em 1.3em;
+  font-weight: 900;
+  font-size: 18px;
+  border: 3px solid black;
+  border-radius: 0.4em;
+  box-shadow: 0.1em 0.1em;
+  cursor: pointer;
+  width: 16px;
+  height: 16px;
+  
+}
+.koumpi:hover {
+  transform: translate(-0.05em, -0.05em);
+  box-shadow: 0.15em 0.15em;
+}
+.koumpi:active {
+  transform: translate(0.05em, 0.05em);
+  box-shadow: 0.05em 0.05em;
+}
+a:visited { 
+  text-decoration: none; 
+  color: black;
+}
+h1{
+  font-family: MyGreek;
 }

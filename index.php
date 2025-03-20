@@ -11,13 +11,13 @@
 	];
 
 	$data =[
-		[100, 500,100],
-		[900,100,430]
+	
 	];
 	
 	$paketo = $_POST["paketo"];
 	$net = $_POST["net"];
 	$ihl = $_POST["ihl"];
+	$ana = $_POST["ana"];
 
 	$Payload_leght = (int)(($net - $ihl * 4) / 8) ;
 
@@ -34,7 +34,7 @@
 	//echo "<br>",$periseui,"<br>";
 
 	
-	for ($i = 0;$i < $paketa -1 ;$i++){
+	for ($i = 0;$i < $paketa ;$i++){
 		echo $i,". Πακέτο θα είναι: ", $n, "<br>";
 		array_push($data,$i, $n);
 	}
