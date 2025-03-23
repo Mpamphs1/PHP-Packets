@@ -47,7 +47,7 @@
 	echo "<table border='1' width='100%' style='text-align: center;'>";
 
 	echo "<tr class='kati'>";
-	for ($i = 1; $i <= $paketa; $i++) {
+	for ($i = 1; $i <= $paketa+1; $i++) {
 		echo "<th>$i</th>";
 	}
 	echo "</tr>";

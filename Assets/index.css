@@ -24,7 +24,6 @@ button {
   border-radius: 0.4em;
   box-shadow: 0.1em 0.1em;
   cursor: pointer;
-  direction: ltr;
 }
 
 button:hover {
