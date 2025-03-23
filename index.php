@@ -27,21 +27,31 @@
 
 	//echo $n;
 
-	$paketa =(int)($paketo / $n) ;
+	$paketa =(int)($paketo / $n);
 	$periseui = $paketo % $n;
 	
+	if ($periseui != 0){
+		$sunolika = $paketa + 1;
+	}
+	else{
+		$sunolika = $paketa;
+	}
 	//echo "<br>", $paketa,"<br>";
 	//echo "<br>",$periseui,"<br>";
 
-	
-	for ($i = 0;$i < $paketa ;$i++){
-		echo $i,". Πακέτο θα είναι: ", $n, "<br>";
-		array_push($data,$i, $n);
+	for ($j = 0;$j < $sunolika; $j++){
+		$Fragment_offset = $j * $Payload_leght ;
+		if($j+1 == $sunolika){
+			$data[$j] = [$ihl *4, $n+($ihl *4),$n, $ana, 0,0, $Fragment_offset];
+		}
+		else{
+			$data[$j] = [$ihl *4, $n+($ihl *4),$n, $ana, 0,1, $Fragment_offset];
+		}
+		
 	}
-
-	echo $paketa,". Πακέτο θα είναι: ", $periseui,"<br>";
+	
 	print_r ($data);
-	//$Fragment_offset = 
+	//$Fragment_offset = $n * $Payload_leght 
 
 	echo "<table border='1' width='100%' style='text-align: center;'>";
 
@@ -53,7 +63,7 @@
 
 	for ($j = 0; $j < 7; $j++) {
 		echo "<tr>";
-		for ($i = 0; $i < $paketa; $i++) {
+		for ($i = 0; $i < $sunolika; $i++) {
 			echo "<td class='kati'>{$plirofories[$j]}: {$data[$i][$j]}</td>";
 		}
 		echo "</tr>";
