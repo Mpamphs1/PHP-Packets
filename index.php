@@ -21,11 +21,7 @@
 
 	$Payload_leght = (int)(($net - $ihl * 4) / 8) ;
 
-	//echo $Payload_leght, "<br>" ;
-
 	$n = 8 * $Payload_leght;
-
-	//echo $n;
 
 	$paketa =(int)($paketo / $n);
 	$periseui = $paketo % $n;
@@ -36,8 +32,6 @@
 	else{
 		$sunolika = $paketa;
 	}
-	//echo "<br>", $paketa,"<br>";
-	//echo "<br>",$periseui,"<br>";
 
 	for ($j = 0;$j < $sunolika; $j++){
 		$Fragment_offset = $j * $Payload_leght ;
@@ -51,7 +45,6 @@
 	}
 	
 	print_r ($data);
-	//$Fragment_offset = $n * $Payload_leght 
 
 	echo "<table border='1' width='100%' style='text-align: center;'>";
 
