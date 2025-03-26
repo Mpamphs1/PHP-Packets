@@ -36,7 +36,12 @@
 	for ($j = 0;$j < $sunolika; $j++){
 		$Fragment_offset = $j * $Payload_leght ;
 		if($j+1 == $sunolika){
-			$data[$j] = [$ihl *4, $n+($ihl *4),$n, $ana, 0,0, $Fragment_offset];
+			if ($periseui != 0){
+				$data[$j] = [$ihl *4, $periseui+($ihl *4),$periseui, $ana, 0,0, $Fragment_offset];
+			}
+			else{
+				$data[$j] = [$ihl *4, $n+($ihl *4),$n, $ana, 0,0, $Fragment_offset];
+			}
 		}
 		else{
 			$data[$j] = [$ihl *4, $n+($ihl *4),$n, $ana, 0,1, $Fragment_offset];
